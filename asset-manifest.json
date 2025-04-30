@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.6620eb91.css",
-    "main.js": "/static/js/main.cfef0dfc.js",
+    "main.js": "/static/js/main.b25dbf78.js",
     "static/js/787.1f42863b.chunk.js": "/static/js/787.1f42863b.chunk.js",
     "static/media/musicstore.png": "/static/media/musicstore.1d6c6fbc7b56dd13c498.png",
     "static/media/leela-ek-paheli.jpg": "/static/media/leela-ek-paheli.7de7d17a4fce0b02b072.jpg",
@@ -12,20 +12,15 @@
     "static/media/onboarding.png": "/static/media/onboarding.ee3e79128e7b2004f657.png",
     "static/media/profile-view.png": "/static/media/profile-view.6d3d25bc1b291e184b08.png",
     "static/media/jagga-jasoos.png": "/static/media/jagga-jasoos.f7da425d0490bb5e046b.png",
-    "static/media/done.svg": "/static/media/done.5b7b8e1863bbd13f8ad6454304d7d167.svg",
     "static/media/dishoom.png": "/static/media/dishoom.8f95de1c29acc1471893.png",
     "static/media/alliswell.png": "/static/media/alliswell.e166bb2c54201f6c1ab5.png",
     "static/media/profilesDashboard.png": "/static/media/profilesDashboard.b5cd45aa900dda414215.png",
     "static/media/loginpage.png": "/static/media/loginpage.8196dc070c6d165d05a1.png",
     "static/media/wazir.png": "/static/media/wazir.04349d192003befd8506.png",
-    "static/media/onboard.svg": "/static/media/onboard.922352fabed9f03182fc20a7b013db2c.svg",
-    "static/media/empty.svg": "/static/media/empty.c3a7ec12649e4a85333198235935b238.svg",
     "static/media/befikre.png": "/static/media/befikre.2b1d0454e6883076a7d3.png",
     "static/media/rockey-handsome.png": "/static/media/rockey-handsome.a8134c66864cf5b82dfb.png",
     "static/media/roy.png": "/static/media/roy.a357963094766804d3f1.png",
     "static/media/kabir-singh.png": "/static/media/kabir-singh.f172776df202a48a29df.png",
-    "static/media/tfa.svg": "/static/media/tfa.a664091f699e7c52d1633259903ce356.svg",
-    "static/media/mail-sent.svg": "/static/media/mail-sent.2080841b077d90eb9858228ad4e5e827.svg",
     "static/media/settings.png": "/static/media/settings.4a0ad0a30d743dcaadad.png",
     "static/media/invoiceDashboard.png": "/static/media/invoiceDashboard.a1aa6b226ff8b21cc4a9.png",
     "static/media/airlift.png": "/static/media/airlift.127077c8a07449bbe1cc.png",
@@ -33,11 +28,11 @@
     "static/media/raaz-reboot.png": "/static/media/raaz-reboot.aefa16f4c6b8e07b50c1.png",
     "index.html": "/index.html",
     "main.6620eb91.css.map": "/static/css/main.6620eb91.css.map",
-    "main.cfef0dfc.js.map": "/static/js/main.cfef0dfc.js.map",
+    "main.b25dbf78.js.map": "/static/js/main.b25dbf78.js.map",
     "787.1f42863b.chunk.js.map": "/static/js/787.1f42863b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6620eb91.css",
-    "static/js/main.cfef0dfc.js"
+    "static/js/main.b25dbf78.js"
   ]
 }
