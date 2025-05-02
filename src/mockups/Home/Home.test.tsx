@@ -1,9 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Home from './Home';
+import { createRoot } from 'react-dom/client';
 
 it('It should mount', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<Home />, div);
-  ReactDOM.unmountComponentAtNode(div);
+  const root = createRoot(div);
+  root.render(<Home />);
+  root.unmount();
 });

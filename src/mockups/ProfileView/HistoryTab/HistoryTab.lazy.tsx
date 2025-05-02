@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, JSX } from 'react';
 
 const LazyHistoryTab = lazy(() => import('./HistoryTab'));
 
