@@ -1,9 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import HistoryTab from './HistoryTab';
 
 it('It should mount', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<HistoryTab />, div);
-  ReactDOM.unmountComponentAtNode(div);
+  const root = createRoot(div);
+  root.render(<HistoryTab />);
+  root.unmount();
 });
