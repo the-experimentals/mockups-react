@@ -1,7 +1,6 @@
 import { Button, Typography } from '@mui/material';
 import React from 'react';
-import styles from './Finish.module.scss';
-// import done from '../../../assets/illustrations/done.svg'
+import done from '../../../assets/illustrations/done.svg'
 
 class Finish extends React.Component {
   render() {
@@ -13,7 +12,7 @@ class Finish extends React.Component {
         </div>
 
         <div>
-          {/* <img src={done} alt="done" style={{width:'400px'}}/> */}
+          <img src={done} alt="done" style={{width:'400px'}}/>
         </div>
         <div>
           <Button variant="contained" color="primary" >Enter</Button>

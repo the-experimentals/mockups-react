@@ -1,4 +1,4 @@
-import { faCog, faEnvelope, faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
+import { faCog } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Box, Button, IconButton, Typography } from '@mui/material';
 import React from 'react';

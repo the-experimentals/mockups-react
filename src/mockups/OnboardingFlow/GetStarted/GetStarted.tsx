@@ -1,20 +1,15 @@
 import { Button, Typography } from '@mui/material';
 import React from 'react';
-import styles from './GetStarted.module.scss';
-// import onboard from '../../../assets/illustrations/onboard.svg';
+import onboard from '../../../assets/illustrations/onboard.svg';
 import IOnboardingProps from '../prop/IOnboardingProps';
 
 class GetStarted extends React.Component<IOnboardingProps, {}> {
-
-  constructor(props: IOnboardingProps) {
-    super(props);
-  }
 
   render() {
     return (
       <div style={{padding:'20px 30px', textAlign:'center'}}>
         <Typography variant="h3" gutterBottom>Welcome John Doe</Typography>
-        {/* <img src={onboard} alt="Onboarding flow" style={{width:'400px'}} /> */}
+        <img src={onboard} alt="Onboarding flow" style={{width:'400px'}} />
 
         <div>
           <Typography variant="h4" gutterBottom>We are so excited to have you onboard</Typography>

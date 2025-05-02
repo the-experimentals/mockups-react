@@ -2,15 +2,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Button, Checkbox, FormControlLabel, InputAdornment, TextField, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
-import styles from './ChangePassword.module.scss';
 import {faKey} from '@fortawesome/free-solid-svg-icons';
 import IOnboardingProps from '../prop/IOnboardingProps';
 
 class ChangePassword extends React.Component<IOnboardingProps, {}> {
-
-  constructor(props: IOnboardingProps) {
-    super(props);
-  }
 
   render() {
     return (
@@ -21,29 +16,39 @@ class ChangePassword extends React.Component<IOnboardingProps, {}> {
         </div>
         <Box  display="flex" sx={{width:'800px'}} style={{ margin:'auto', padding:'20px 15px'}}>
           <Box style={{ padding:'20px 30px', textAlign:'left'}} sx={{width:'50%'}} >
-            <TextField variant="outlined" style={{width:'100%', marginBottom:'1.5rem'}} label="Old password" InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <FontAwesomeIcon icon={faKey} style={{fontSize:'21px'}} />
-                </InputAdornment>
-              )
-            }} />
+            <TextField variant="outlined" style={{width:'100%', marginBottom:'1.5rem'}} label="Old password" 
+            
+            slotProps={{
+              input: {
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <FontAwesomeIcon icon={faKey} style={{fontSize:'21px'}} />
+                  </InputAdornment>
+                )
+              }
+            }}/>
 
-            <TextField variant="outlined" style={{width:'100%', marginBottom:'1.5rem'}} label="New password" InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <FontAwesomeIcon icon={faKey} style={{fontSize:'21px'}} />
-                </InputAdornment>
-              )
-            }} />
+            <TextField variant="outlined" style={{width:'100%', marginBottom:'1.5rem'}} label="New password" 
+            slotProps={{
+              input:{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <FontAwesomeIcon icon={faKey} style={{fontSize:'21px'}} />
+                  </InputAdornment>
+                )
+              }
+            }}/>
 
-          <TextField variant="outlined" style={{width:'100%'}} label="Confirm password" InputProps={{
+          <TextField variant="outlined" style={{width:'100%'}} label="Confirm password" 
+          slotProps={{
+            input:{
               startAdornment: (
                 <InputAdornment position="start">
                   <FontAwesomeIcon icon={faKey} style={{fontSize:'21px'}} />
                 </InputAdornment>
               )
-            }} />
+            }
+          }}/>
 
           <div>
           <FormControlLabel
