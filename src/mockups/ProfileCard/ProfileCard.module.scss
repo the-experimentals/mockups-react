@@ -30,8 +30,7 @@
     text-align: center;
     position: relative;
 
-    & .initials {
-      color: #1b1c1e;
+    & .initials {      
       font-size: 50px; /* 50% of parent */
       line-height: 1;
       position: relative;
@@ -40,7 +39,7 @@
 
     &::before {
       content: "";
-      border: 3px solid #1b1c1e;
+      border: 3px solid;
       position: absolute;
       left: 0;
       right: 0;
