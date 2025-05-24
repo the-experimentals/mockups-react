@@ -13,8 +13,7 @@ interface IMainLayoutProps{
 
 class MainLayout extends React.Component<IMainLayoutProps,{}>{
 
-  constructor(props:IMainLayoutProps){    
-    debugger
+  constructor(props:IMainLayoutProps){        
     super(props) 
   }
 
