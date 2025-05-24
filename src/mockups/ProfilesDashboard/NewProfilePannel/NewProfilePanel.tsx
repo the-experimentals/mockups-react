@@ -1,7 +1,7 @@
 import { faTimes, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button, FormControl, FormHelperText, Grid, IconButton, InputAdornment, InputLabel, MenuItem, Select, Tab, Tabs, TextField, Typography } from "@mui/material";
-import { Box } from "@mui/system";
+import { Box, useTheme } from "@mui/system";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import LoadingIndicator from "../../../components/LoadingIndicator/LoadingIndicator";
@@ -11,6 +11,7 @@ import INewProfilePanelProps from "./props/INewProfilePanelProps";
 
 const  NewProfilePanel: React.FC<INewProfilePanelProps> =(props) => {
 
+  const theme = useTheme();
   const [isSaved , setIsSaved] = useState(false);
   const[value, setValue] = useState(0)
   const { register, handleSubmit, formState: {errors} }  = useForm({
@@ -40,7 +41,7 @@ const  NewProfilePanel: React.FC<INewProfilePanelProps> =(props) => {
   
   return(
     <div className={`${styles.panelOverlay}`}>
-      <Box display={'flex'} flexDirection="column" className={[`${styles.newProfilePanel}`].join()}>
+      <Box display={'flex'} flexDirection="column" className={[`${styles.newProfilePanel}`].join()} sx={{'--background-color': theme.palette.background.paper}}>
         <header className={`${styles.header}`}>
           <div className={`${styles.panelClose}`}>
             <IconButton size='small' onClick={props.closeNewProfilePanel}>
