@@ -48,11 +48,15 @@ class ProfilesDashboard extends React.Component<{}, IProfilesDashboardState>{
         }
 
         <div style={{ position:'absolute', bottom:'10px', right:'10px'}}>
-          <Tooltip title="Create new profile" arrow placement='top'>
-            <Fab color='primary' onClick={this.createNewProfile}>
-              <FontAwesomeIcon icon={faPlus} />
-            </Fab>  
-          </Tooltip>
+          {
+            this.state.showNewProfilePanel ? "" : (
+              <Tooltip title="Create new profile" arrow placement='top'>
+                <Fab color='primary' onClick={this.createNewProfile}>
+                  <FontAwesomeIcon icon={faPlus} />
+                </Fab>
+              </Tooltip>
+            )
+          }
         </div>
       </Box>
     )

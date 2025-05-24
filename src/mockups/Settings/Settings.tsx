@@ -1,4 +1,4 @@
-import { faCog, faCubes, faPaintBrush, faPalette, faPallet } from '@fortawesome/free-solid-svg-icons';
+import { faCog, faCubes, faPalette } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Typography } from '@mui/material';
 import { Box } from '@mui/system';

@@ -1,37 +1,62 @@
-import { faEyeSlash, faKey, faTrash, faTrashAlt, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faEye, faEyeSlash, faKey, faTrash, faTrashAlt, faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {Box, Button, Checkbox, FormControlLabel, TextField,  InputAdornment, Typography} from '@mui/material';
+import {Box, Button, Checkbox, FormControlLabel, TextField,  InputAdornment, Typography, useTheme} from '@mui/material';
 import React from 'react';
 import styles from './LoginPage.module.scss';
-import ILoginPageState from './state/ILoginPageState';
-export class LoginPage extends React.Component<{}, ILoginPageState>{
 
-  constructor(props:any){
-    super(props)
+const LoginPage: React.FC = () => {
 
-    this.state = {
-      savedUser: [{
-        initials: "JD",
-        name: "John Doe 1",
-        username: "johndoe",
-        selected: false
-      }, {
-        initials: "JD",
-        name: "John Doe 2",
-        username: "johndoe",
-        selected: false
-      }, {
-        initials: "JD",
-        name: "John Doe 3",
-        username: "johndoe",
-        selected: false
-      }]
+  const theme = useTheme();
+      
+  const [savedUser, setSavedUser] = React.useState([
+    {
+      initials: "JD",
+      name: "John Doe 1",
+      username: "johndoe",
+      selected: false
+    },
+    {
+      initials: "JD",
+      name: "John Doe 2",
+      username: "johndoe",
+      selected: false
+    },
+    {
+      initials: "JD",
+      name: "John Doe 3",
+      username: "johndoe",
+      selected: false
     }
+  ]);
+
+  const [showPassword, setShowPassword] = React.useState(false);
+
+    const clickUser = (index:any) => {    
+    const currentUsers = savedUser
+    // unselect all users first.
+    currentUsers.map((user) => {
+      if(user.selected)
+        user.selected = false
+    })
+
+    let clickedUser = Object.assign({}, currentUsers[index])
+    clickedUser.selected = true
+    currentUsers[index] = clickedUser
+
+    setSavedUser([...currentUsers]);
+  }
+  
+
+  const deleteUser = (index:number) =>{
+    const currentUsers = savedUser
+    currentUsers.splice(index, 1) 
+
+    setSavedUser([...currentUsers]);
   }
 
-  render(){
-    return(
-      <Box flexDirection="row" flexWrap="wrap" display="flex" justifyContent='center' className={'wrapper'}>
+
+  return (
+      <Box flexDirection="row" flexWrap="wrap" display="flex" justifyContent='center' className={'wrapper'} sx={{ '--background-color': theme.palette.background.default }}>
         <Box m={1} className={`${styles.loginCard}`} height='fit-content'>
         <header className={'padding1015'}>
           <Typography variant="h4">Welcome</Typography>
@@ -54,7 +79,7 @@ export class LoginPage extends React.Component<{}, ILoginPageState>{
 
           <TextField id="outlined-basic"                      
                      helperText="Test"
-                     type="password"
+                     type={showPassword ? "text" : "password"}
                      label="Password" 
                      variant="outlined" 
                      style={{width:'100%'}}
@@ -66,7 +91,7 @@ export class LoginPage extends React.Component<{}, ILoginPageState>{
                        ),
                        endAdornment: (
                          <InputAdornment position="end">
-                           <FontAwesomeIcon icon={faEyeSlash} style={{fontSize:'21px'}} className={'cursor-pointer'}/>
+                           <FontAwesomeIcon icon={showPassword ? faEye : faEyeSlash} style={{fontSize:'21px'}} className={'cursor-pointer'}/>
                          </InputAdornment>
                        )
                      }} />
@@ -92,11 +117,11 @@ export class LoginPage extends React.Component<{}, ILoginPageState>{
           </header>
 
           <div className={'padding1015'}>
-            {this.state.savedUser.map((user, index) => {              
+            {savedUser.map((user, index) => {              
               return (
                 
                 <Box flexDirection="column" display="flex" key={index} className={`${styles.savedUser}`}>
-                  <Box flexDirection="row" display="flex" onClick={() => this.clickUser(index)}>
+                  <Box flexDirection="row" display="flex" onClick={() => clickUser(index)}>
                     <div style={{width:'40px', position: 'relative'}}>
                       <div className={`${styles.profileIcon} ${styles.verticalCenter}`}>
                         <span className={`${styles.initials}`}>{user.initials}</span>
@@ -107,7 +132,7 @@ export class LoginPage extends React.Component<{}, ILoginPageState>{
                       <Typography variant="subtitle2">@{user.username}</Typography>
                     </Box>
                     <Box justifyItems="flex-end" className={`${styles.trashIcon}`} style={{position:'relative', width:'50px', textAlign:'center'}}>                
-                      <FontAwesomeIcon icon={faTrash} className={`${styles.verticalCenter}`} onClick={() => this.deleteUser(index)}/> 
+                      <FontAwesomeIcon icon={faTrash} className={`${styles.verticalCenter}`} onClick={() => deleteUser(index)}/> 
                     </Box>    
                   </Box>
 
@@ -126,7 +151,7 @@ export class LoginPage extends React.Component<{}, ILoginPageState>{
                                   ),
                                   endAdornment: (
                                     <InputAdornment position="end">
-                                      <FontAwesomeIcon icon={faEyeSlash} style={{fontSize:'21px'}} className={'cursor-pointer'} onClick={() => this.togglePassword()}/>
+                                      <FontAwesomeIcon icon={faEyeSlash} style={{fontSize:'21px'}} className={'cursor-pointer'}/>
                                     </InputAdornment>
                                   )
                                 }} />
@@ -152,38 +177,7 @@ export class LoginPage extends React.Component<{}, ILoginPageState>{
         </Box>
         
       </Box>
-    )
-  }
-
-  clickUser = (index:any) => {    
-    const currentUsers = this.state.savedUser
-    // unselect all users first.
-    currentUsers.map((user) => {
-      if(user.selected)
-        user.selected = false
-    })
-
-    let clickedUser = Object.assign({}, currentUsers[index])
-    clickedUser.selected = true
-    currentUsers[index] = clickedUser
-
-    this.setState({
-      savedUser: currentUsers
-    })
-  }
-
-  togglePassword = () => {
-    alert("test")
-  }
-
-  deleteUser = (index:number) =>{
-    const currentUsers = this.state.savedUser
-    currentUsers.splice(index, 1) 
-
-    this.setState({
-      savedUser: currentUsers
-    })
-  }
+  )
 }
 
 export default LoginPage;

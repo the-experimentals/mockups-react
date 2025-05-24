@@ -1,8 +1,8 @@
 import { faCog } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Button, IconButton, Typography } from '@mui/material';
-import { Box } from '@mui/system';
-import React from 'react';
+import { Box, useTheme } from '@mui/system';
+import  { FC } from 'react';
 import IProfileCardData from '../data/IProfileCardData';
 import styles from './ProfileCard.module.scss';
 
@@ -10,14 +10,12 @@ import styles from './ProfileCard.module.scss';
 interface IProfileCardProps {
   cardData?: IProfileCardData;
 }
-class ProfileCard extends React.Component<IProfileCardProps, {}>{
 
-  constructor(props: IProfileCardProps) {
-    super(props)
-  }
-  render(): React.ReactNode {
-      return (
-        <Box p={1} className={`${styles.profileCardWrapper}`}>
+const ProfileCard: FC<IProfileCardProps> = (props) => {
+
+  const theme = useTheme()
+  return(
+            <Box p={1} className={`${styles.profileCardWrapper}`} sx={{'--background-color': theme.palette.background.default}}>
           <Box display="flex" flexDirection="column" className={`${styles.profileCard}`}>
             <div style={{position:'relative'}} className={`${styles.gearOption}`}>
               <IconButton size='small' style={{position:'absolute', right:'-5px', top:'-5px'}}>
@@ -28,13 +26,13 @@ class ProfileCard extends React.Component<IProfileCardProps, {}>{
               <Box sx={{width:'60px'}} width={'60px'} style={{position:'relative'}}>
                 <div style={{width:'60px'}}>
                   <div className={styles.profileIcon}>
-                    <span className={`${styles.initials}`}>{this.props.cardData?.initials}</span>
+                    <span className={`${styles.initials}`}>{props.cardData?.initials}</span>
                   </div>
                 </div>
               </Box>
               <Box p={1} sx={{width:'80%',}}>
-                <Typography variant="h4" style={{whiteSpace:'nowrap',overflow:'hidden', textOverflow:'ellipsis'}}>{this.props.cardData?.name}</Typography>
-                <Typography variant="subtitle2">@{this.props.cardData?.username}</Typography>
+                <Typography variant="h4" style={{whiteSpace:'nowrap',overflow:'hidden', textOverflow:'ellipsis'}}>{props.cardData?.name}</Typography>
+                <Typography variant="subtitle2">@{props.cardData?.username}</Typography>
               </Box>
             </Box>
           
@@ -49,7 +47,6 @@ class ProfileCard extends React.Component<IProfileCardProps, {}>{
           
           </Box>
         </Box>
-      )
-  }
+  )
 }
 export default ProfileCard;

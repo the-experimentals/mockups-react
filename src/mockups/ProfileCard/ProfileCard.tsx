@@ -1,4 +1,4 @@
-import { faCog, faEnvelope, faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
+import { faCog } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Box, Button, IconButton, Typography } from '@mui/material';
 import React from 'react';
@@ -11,7 +11,7 @@ class ProfileCard extends React.Component{
         <Box className={`${styles.ProfileCard}`}>
           <div className={`${styles.gearOption}`}>
             <IconButton color="primary">
-              <FontAwesomeIcon icon={faCog} style={{fontSize:"18px", color:'#000'}}/>
+              <FontAwesomeIcon icon={faCog} style={{fontSize:"18px"}}/>
             </IconButton>
           </div>
           <header>

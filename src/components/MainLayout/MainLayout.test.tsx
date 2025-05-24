@@ -1,9 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import MainLayout from './MainLayout';
 
 it('It should mount', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<MainLayout />, div);
-  ReactDOM.unmountComponentAtNode(div);
+  const root = createRoot(div);
+  root.render(<MainLayout name="Test Name" />);
+  root.unmount();
 });
