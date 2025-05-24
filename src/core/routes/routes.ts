@@ -86,15 +86,17 @@ const ROUTES: IRoute[] = [{
         component: InvoiceManagerDashboard,
     }]
 }, {
-    path: '/task-boards',
-    name: "",
+    path: '/task-boards',    
     component: MainLayout,
     exact: true,
-    childern: [{
-        path: '',
+    props:{
         name: "TaskBoards",
+    },
+    children: [{
+        path: '',
+        // name: "TaskBoards",
         component: TaskBoards,
-        exact: true,
+        // exact: true,
     }]
 }, {
     path: '/profiles',
