@@ -2,26 +2,20 @@ import { faAccessibleIcon } from '@fortawesome/free-brands-svg-icons';
 import { faEllipsisV, faPrint } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Button, Checkbox, FormControlLabel, Table, Typography } from '@mui/material';
-import { Box, textAlign } from '@mui/system';
-import React from 'react';
+import { Box, textAlign, useTheme } from '@mui/system';
+import React, { FC, useState } from 'react';
 import Status from './constants/status';
 import INVOICES from './data/invoices';
 import styles from './InvoiceManagerDashboard.module.scss';
 import IInvoicesState from './state/IInvoicesState';
 
-class InvoiceManagerDashboard extends React.Component<{}, IInvoicesState> {
+const InvoiceManagerDashboard: FC = () => {
 
-  constructor(props: any) {
-    super(props);
+  const [invoicesState] = useState<IInvoicesState>({ invoices: INVOICES });
+  const theme = useTheme()
 
-    this.state = {
-      invoices: INVOICES
-    }
-  }
-
-  public render() {
-    return (
-      <Box display="flex" flexDirection="column" className={`${styles.InvoiceManagerDashboard}`}>
+  return(
+          <Box display="flex" flexDirection="column" className={`${styles.InvoiceManagerDashboard}`} sx={{'--background-color': theme.palette.background.default}}>
         <Box>
           <table className={`${styles.invoicesTable}`}>
             <thead>
@@ -47,7 +41,7 @@ class InvoiceManagerDashboard extends React.Component<{}, IInvoicesState> {
             </thead>
             <tbody>
               {
-                this.state.invoices.map((invoice, index) => {
+                invoicesState.invoices.map((invoice, index) => {
                   const disablePrint = invoice.status === Status.PAID;
 
                   let formatter = new Intl.NumberFormat('en-US', {
@@ -107,8 +101,7 @@ class InvoiceManagerDashboard extends React.Component<{}, IInvoicesState> {
           </table>            
         </Box>
       </Box>
-    );
-  }
+  )
 }
 
 export default InvoiceManagerDashboard;

@@ -1,9 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import VerifyAccount from './VerifyAccount';
 
 it('It should mount', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<VerifyAccount />, div);
-  ReactDOM.unmountComponentAtNode(div);
+  const root = createRoot(div);
+  root.render(<VerifyAccount />);
+  root.unmount();
 });
