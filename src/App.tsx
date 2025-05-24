@@ -11,10 +11,10 @@ export default class App extends React.Component{
         <Routes>
           {ROUTES.map((route, index) => {
             return(
-              <Route key={index} path={route.path} element={<route.component/>}>
-                {route.childern?.map((childRoute, childIndex) => {
+              <Route key={index} path={route.path} element={<route.component {...route.props}/>}>
+                {route.children?.map((childRoute, childIndex) => {
                   return (
-                    <Route key={childIndex} path={childRoute.path} element={<childRoute.component/>} />
+                    <Route key={childIndex} path={childRoute.path} element={<childRoute.component {...route.props}/>} />
                   )
                 })}
               </Route>

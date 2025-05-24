@@ -38,12 +38,7 @@ export default class Home extends React.Component<{}, IHomeState>{
   render(){
     return (      
 
-      <div className={`${styles.padding2030}`}>
-        <header style={{textAlign:'center'}}>
-          <Typography variant="h3" >Mockups Gallery</Typography>
-          <Typography variant="subtitle2">Some mockups on which I worked.</Typography>
-          <hr/>
-        </header>
+      <div className={`${styles.padding2030}`}>        
         <Box display="flex" className={`${styles.padding2030} ${styles.galleryWrapper}`}>
           <div className={`${styles.grid}`}>
             {            

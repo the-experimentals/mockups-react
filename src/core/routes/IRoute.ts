@@ -1,8 +1,7 @@
 export default interface IRoute{
     path: string
-    name: string
-    exact: boolean
+    exact?: boolean
     component: any
     props?: any
-    childern?: IRoute[]
+    children?: IRoute[]
 }

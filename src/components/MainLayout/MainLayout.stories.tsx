@@ -5,8 +5,8 @@ export default {
   title: "MainLayout",
 };
 
-export const Default = () => <MainLayout />;
+// export const Default = () => <MainLayout />;
 
-Default.story = {
-  name: 'default',
-};
+// Default.story = {
+//   name: 'default',
+// };

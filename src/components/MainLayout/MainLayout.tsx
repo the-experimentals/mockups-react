@@ -6,10 +6,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLongArrowAltLeft } from '@fortawesome/free-solid-svg-icons';
 import SavedUser from '../../mockups/LoginPage/state/ISavedUser';
 import { Box, Card } from '@mui/material';
-class MainLayout extends React.Component<{},{}>{
 
-  constructor(props:any){    
-    super(props)    
+interface IMainLayoutProps{
+  name: string
+}
+
+class MainLayout extends React.Component<IMainLayoutProps,{}>{
+
+  constructor(props:IMainLayoutProps){    
+    debugger
+    super(props) 
   }
 
   render(){
@@ -22,7 +28,7 @@ class MainLayout extends React.Component<{},{}>{
                 <Link to="/">
                   <FontAwesomeIcon icon={faLongArrowAltLeft} style={{fontSize:'28px', color:'#000'}} className={'cursor-pointer'} />  
                 </Link>
-                {/* <h2 style={{margin:0}}>{route.name}</h2> */}
+                <h2 style={{margin:0}}>{this.props.name}</h2>
                 <hr/>
               </Box>
               
