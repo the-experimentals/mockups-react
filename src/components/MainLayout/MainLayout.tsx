@@ -25,7 +25,7 @@ class MainLayout extends React.Component<IMainLayoutProps,{}>{
           <Box display="flex" flexDirection="column" style={{height:'100%'}}>            
               <Box className={'padding2030'} style={{paddingBottom:'0'}}>
                 <Link to="/">
-                  <FontAwesomeIcon icon={faLongArrowAltLeft} style={{fontSize:'28px', color:'#000'}} className={'cursor-pointer'} />  
+                  <FontAwesomeIcon icon={faLongArrowAltLeft} style={{fontSize:'28px'}} className={'cursor-pointer'} />  
                 </Link>
                 <h2 style={{margin:0}}>{this.props.name}</h2>
                 <hr/>
