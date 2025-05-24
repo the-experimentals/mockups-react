@@ -38,12 +38,7 @@ class ProfileView extends React.Component<{}, IProfileViewState>{
         </div>
 
         <div className={`${styles.description}`}>
-          <div style={{position:'relative'}}>
-            <div className={`${styles.edit}`}>
-              <IconButton color="primary">
-                <FontAwesomeIcon icon={faPencilAlt} style={{fontSize:'21px', color:'#000'}} />
-              </IconButton>              
-            </div>
+          <div style={{position:'relative'}}>            
             <Typography variant="h6">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </Typography>            
